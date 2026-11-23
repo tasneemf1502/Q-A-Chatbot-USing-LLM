@@ -98,6 +98,23 @@ Streamlit does not require the FastAPI service. From the project root:
 
 Open the local URL printed by Streamlit, usually <http://localhost:8501>. BloomBot also reads `COHERE_API_KEY` from the root `.env` file.
 
+## Deploy BloomBot to Streamlit Community Cloud
+
+1. Push the project to a GitHub repository.
+2. Sign in at <https://share.streamlit.io/> with the GitHub account that can access the repository.
+3. Select **Create app**, then choose this repository, the `main` branch, and `app.py` as the app file.
+4. Open **Advanced settings** and add the Cohere key under **Secrets** using TOML syntax:
+
+   ```toml
+   COHERE_API_KEY = "your_cohere_api_key"
+   ```
+
+5. Select **Deploy**. Streamlit Cloud installs the packages from the root `requirements.txt`.
+
+The app reads the key from Streamlit Secrets in the cloud, and from environment variables or the root `.env` file when run locally. Do not commit `.env` or `.streamlit/secrets.toml`.
+
+Streamlit Community Cloud's local filesystem is not a durable database. BloomBot's `chat_garden.json` history may not persist across app restarts or redeployments.
+
 ## API overview
 
 | Method | Path | Purpose |

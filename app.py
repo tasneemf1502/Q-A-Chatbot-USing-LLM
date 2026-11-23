@@ -14,6 +14,7 @@ from langchain_cohere import ChatCohere
 from langchain_core.messages import HumanMessage, SystemMessage
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
+from streamlit.errors import StreamlitSecretNotFoundError
 
 APP_DIR = Path(__file__).resolve().parent
 ENV_FILE = APP_DIR / ".env"
@@ -37,7 +38,16 @@ ANSWER_GUIDANCE = {
 
 
 def get_setting(name):
-    return os.getenv(name) or dotenv_values(ENV_FILE).get(name) or ""
+    value = os.getenv(name)
+    if value:
+        return value
+
+    try:
+        value = st.secrets.get(name)
+    except StreamlitSecretNotFoundError:
+        value = None
+
+    return value or dotenv_values(ENV_FILE).get(name) or ""
 
 
 def load_garden():
