@@ -232,7 +232,10 @@ def build_source_context(question, chunks):
 def get_cohere_response(question, mode, answer_style, source_context=None):
     api_key = get_setting("COHERE_API_KEY")
     if not api_key:
-        raise ValueError("Cohere API key not found. Set COHERE_API_KEY in your .env file.")
+        raise ValueError(
+            "Cohere API key not found. Set COHERE_API_KEY in Streamlit Cloud secrets "
+            "or in your local .env file."
+        )
 
     system_prompt = (
         "You are BloomBot, a friendly, helpful chatbot with a warm, upbeat voice. "
@@ -611,7 +614,10 @@ if uploaded_files:
         st.stop()
 
 if not get_setting("COHERE_API_KEY"):
-    st.error("Cohere API key not found. Set COHERE_API_KEY in your local .env file.")
+    st.error(
+        "Cohere API key not found. Set COHERE_API_KEY in Streamlit Cloud secrets "
+        "or in your local .env file."
+    )
     st.stop()
 
 st.markdown(
