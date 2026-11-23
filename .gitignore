@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+venv/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+langchain.ipynb
+frontend/node_modules/
+frontend/dist/
+chat_garden.json
+chat_garden.tmp

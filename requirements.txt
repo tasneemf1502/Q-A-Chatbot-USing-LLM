@@ -1,0 +1,11 @@
+cohere
+fastapi
+langchain
+langchain-cohere
+openai
+huggingface_hub
+python-dotenv
+python-multipart
+pypdf
+streamlit
+uvicorn
