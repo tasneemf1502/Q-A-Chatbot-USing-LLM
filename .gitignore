@@ -158,6 +158,7 @@ vite.config.ts.timestamp-*
 
 # Python and local app data
 venv/
+.venv/
 __pycache__/
 *.py[cod]
 *.db
