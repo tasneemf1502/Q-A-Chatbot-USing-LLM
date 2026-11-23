@@ -155,3 +155,22 @@ Check Python syntax from the project root:
 ```powershell
 .\venv\Scripts\python.exe -m py_compile app.py backend\main.py backend\database.py
 ```
+
+### 🤖 Q&A Chatbot Using LLM
+
+Developed and successfully deployed an **LLM-powered Q&A Chatbot** using Streamlit, enabling users to interact with AI and get intelligent responses to their queries.
+
+🚀 **Live Demo:** [Try the Chatbot](https://q-a-chatbot-using-llm-usrv4fxhvcwljg8oegn8cq.streamlit.app/)
+
+💻 **React Version:** Also developed a React-based version, available in this GitHub repository. Deployment is coming soon once development is complete!
+
+### 👩‍💻 Author
+
+**Tasneem Fathima**  
+B.E. Computer Science & Engineering (Data Science)  
+Vemana Institute of Technology, Bengaluru
+
+- GitHub: [@tasneemf1502](https://github.com/tasneemf1502)
+- Portfolio: [Visit My Portfolio](https://tasneemf1502.github.io/tasneem-portfolio/)
+
+*Designed, developed, and deployed with a passion for AI, LLMs, and building intelligent applications.*
